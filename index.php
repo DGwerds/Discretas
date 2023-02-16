@@ -34,13 +34,13 @@ require 'conexion.php';
         <form action="" method="POST">
           <div class="card-body" style="background-color: #F2F2F2;">
             <label for="buscar"> Buscar: </label>
-            <input type="text" class="peq" name="id" placeholder="id" value="<?php echo $_POST['id'] ?>">
-            <input type="text" name="nombre" placeholder="Nombre producto" value="<?php echo $_POST['nombre'] ?>">
-            <input type="text" name="categoria" placeholder="Categoria" value="<?php echo $_POST['categoria'] ?>">
-            <input type="text" name="marca" placeholder="Marca" value="<?php echo $_POST['marca'] ?>">
+            <input type="text" class="peq" name="id" placeholder="id" value="<?php echo (isset($_POST['id'])) ? $_POST['id'] : '' ?>">
+            <input type="text" name="nombre" placeholder="Nombre producto" value="<?php echo (isset($_POST['nombre'])) ? $_POST['nombre'] : '' ?>">
+            <input type="text" name="categoria" placeholder="Categoria" value="<?php echo (isset($_POST['categoria'])) ? $_POST['categoria'] : '' ?>">
+            <input type="text" name="marca" placeholder="Marca" value="<?php echo (isset($_POST['marca'])) ? $_POST['marca'] : '' ?>">
             <label>Rango precios: </label>
-            <input type="text" class="peq" name="precio_min" placeholder="minimo" value="<?php echo $_POST['precio_min'] ?>"> -
-            <input type="text" class="peq" name="precio_max" placeholder="maximo" value="<?php echo $_POST['precio_max'] ?>">
+            <input type="text" class="peq" name="precio_min" placeholder="minimo" value="<?php echo (isset($_POST['precio_min'])) ? $_POST['precio_min'] : '' ?>"> -
+            <input type="text" class="peq" name="precio_max" placeholder="maximo" value="<?php echo (isset($_POST['precio_max'])) ? $_POST['precio_max'] : '' ?>">
             <label for="Mostrar agotados">- Mostrar agotados:</label>
             <input type="checkbox" name="mostrar_agotados" <?php if ($mostrar_agotados == "1") echo "checked"; ?>>
             <input type="submit" class="btn btn-success" name="buscar" value="Buscar">
@@ -50,12 +50,12 @@ require 'conexion.php';
           <label>- mostrar opciones avanzadas</label>
           <input type="checkbox" id="opciones" name="opciones_avanzadas" <?php if ($mostrar_opciones == "1") echo "checked";?>>
           <div id="div_agregar" class="card-body" style="background-color: #F2F2F2; display: none;">
-            <input type="text" class="peq" name="a_id" placeholder="id" value="<?php echo $_POST['id'] ?>">
-            <input type="text" name="a_nombre" placeholder="Nombre producto" value="<?php echo $_POST['nombre'] ?>">
-            <input type="text" name="a_categoria" placeholder="Categoria" value="<?php echo $_POST['categoria'] ?>">
-            <input type="text" class="peq" name="a_cantidad" placeholder="cantidad" value="<?php echo $_POST['categoria'] ?>">
-            <input type="text" name="a_marca" placeholder="Marca" value="<?php echo $_POST['marca'] ?>">
-            <input type="text" class="peq" name="a_precio" placeholder="precio" value="<?php echo $_POST['precio_min'] ?>">
+            <input type="text" class="peq" name="a_id" placeholder="id">
+            <input type="text" name="a_nombre" placeholder="Nombre producto">
+            <input type="text" name="a_categoria" placeholder="Categoria">
+            <input type="text" class="peq" name="a_cantidad" placeholder="cantidad">
+            <input type="text" name="a_marca" placeholder="Marca">
+            <input type="text" class="peq" name="a_precio" placeholder="precio">
             <input type="submit" class="btn btn-warning" name="agregar" value="Agregar">
           </div>
           <table class="table table-striped">
@@ -92,7 +92,7 @@ require 'conexion.php';
           </table>
           <div style="text-align: center;">
             <input type="submit" name="atras" class="btn btn-info" value="anterior">
-            <input type="text" class="peq" name="offset" value="<?php echo $_POST['offset'] ?>">
+            <input type="text" class="peq" name="offset" value="<?php echo (isset($_POST['offset'])) ? $_POST['offset'] : '' ?>">
             <input type="submit" name="adelante" class="btn btn-info" value="siguiente">
           </div>
           <input id="del" name="del" style="display: none;">

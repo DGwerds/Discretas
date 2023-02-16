@@ -6,19 +6,17 @@ $mostrar_agotados = 0;
 $mostrar_opciones = 0;
 $entrar = false;
 $eliminar = 0;
-$offset = $_POST['offset'];
 if (isset($_POST['adelante'])) {
 	$entrar = true;
-	$offset += 1;
-	$_POST['offset'] = $offset;
+	$offset = $_POST['offset'];
+	$_POST['offset'] = $offset+1;
 }
 if (isset($_POST['atras'])) {
-	if ($offset >= 1){
-		$entrar = true;
-		$offset -= 1;
-		$_POST['offset'] = $offset;
-	}
+	$entrar = true;
+	$offset = $_POST['offset'];
+	$_POST['offset'] = $offset-1;
 }
+
 
 if (isset($_POST['eliminar'])) {
 	$eliminar = $_POST['del'];

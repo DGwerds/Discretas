@@ -1,7 +1,7 @@
 # Discretas
  Teoria de conjuntos aplicada a bases de datos
 
-EL CODIGO SOLO FUNCIONA SI SE TIENE UNA BASE DE DATOS ACTIVA EN SU MAQUINA
+EL CODIGO SOLO FUNCIONA SI SE TIENE UNA BASE DE DATOS ACTIVA EN SU MAQUINA por ejemplo xammp
 
 Teoria de conjuntos aplicada a bases de datos:
 En la teoría de conjuntos, podemos ver una tabla con productos como un conjunto de elementos, donde cada elemento es un producto con sus atributos: id, nombre, categoria, marca y precio. 
