@@ -6,6 +6,7 @@ $mostrar_agotados = 0;
 $mostrar_opciones = 0;
 $entrar = false;
 $eliminar = 0;
+$offset = 0;
 if (isset($_POST['adelante'])) {
 	$entrar = true;
 	$offset = $_POST['offset'];
@@ -83,7 +84,10 @@ if (isset($_POST['buscar']) or $entrar) {
 	}
 }
 
-$query .= " order by p.id asc LIMIT 10 offset ".$offset*10;
+if ($offset != 0){
+	$query .= " order by p.id asc LIMIT 10 offset ".$offset*10;
+}
+$query .= " order by p.id asc LIMIT 10";
 
 $consulta = pg_query($conexion, $query);
 if (!$consulta){

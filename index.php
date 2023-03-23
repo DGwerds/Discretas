@@ -48,16 +48,19 @@ require 'conexion.php';
           <!-- <input type="submit" name="agregar" value="agregar"> -->
           <br>
           <label>- mostrar opciones avanzadas</label>
-          <input type="checkbox" id="opciones" name="opciones_avanzadas" <?php if ($mostrar_opciones == "1") echo "checked";?>>
-          <div id="div_agregar" class="card-body" style="background-color: #F2F2F2; display: none;">
-            <input type="text" class="peq" name="a_id" placeholder="id">
-            <input type="text" name="a_nombre" placeholder="Nombre producto">
-            <input type="text" name="a_categoria" placeholder="Categoria">
-            <input type="text" class="peq" name="a_cantidad" placeholder="cantidad">
-            <input type="text" name="a_marca" placeholder="Marca">
-            <input type="text" class="peq" name="a_precio" placeholder="precio">
-            <input type="submit" class="btn btn-warning" name="agregar" value="Agregar">
+          <input type="checkbox" id="opciones" name="opciones_avanzadas" <?php if ($mostrar_opciones == "1") echo "checked"; ?>>
+          <div id="div_avanzadas" class="card-body" style="background-color: #F2F2F2; display: none;">
+              <input type="text" class="peq" name="a_id" placeholder="id">
+              <input type="text" name="a_nombre" placeholder="Nombre producto">
+              <input type="text" name="a_categoria" placeholder="Categoria">
+              <input type="text" class="peq" name="a_cantidad" placeholder="cantidad">
+              <input type="text" name="a_marca" placeholder="Marca">
+              <input type="text" class="peq" name="a_precio" placeholder="precio">
+              <input type="submit" class="btn btn-warning" name="agregar" value="Agregar">
+              <input type="submit" class="btn btn-info" name="editar" value="Agregar">
+            </div>
           </div>
+
           <table class="table table-striped">
             <thead class="thead-dark">
               <tr>
@@ -106,8 +109,9 @@ require 'conexion.php';
   const checkbox = document.getElementById('opciones');
   checkbox.addEventListener("change", revisar);
   revisar()
-  function revisar(){
-    const div = document.getElementById('div_agregar');
+
+  function revisar() {
+    const div = document.getElementById('div_avanzadas');
     if (checkbox.checked) {
       div.style.display = "block";
     } else {
