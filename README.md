@@ -9,3 +9,5 @@ En la teoría de conjuntos, podemos ver una tabla con productos como un conjunto
 Para filtrar los productos, podemos aplicar diferentes operaciones de conjunto, como intersección, unión y diferencia. Por ejemplo, para filtrar por id, estamos seleccionando solo los productos que pertenecen a un subconjunto de productos con un id específico. 
 
 Para filtrar por nombre, categoria, marca y precio, estamos aplicando una intersección de productos que cumplen con los criterios específicos. Y para el rango de precios, estamos seleccionando los productos que pertenecen a un subconjunto con precios en un rango específico. En resumen, podemos representar el proceso de filtrar productos en una tabla como la aplicación de operaciones de conjuntos en un conjunto de productos.
+
+![vlcsnap-2024-04-23-02h33m34s464](https://github.com/DGwerds/Discretas/assets/66983078/185fa67b-2cb5-4171-b632-3ef5a9b89351)
